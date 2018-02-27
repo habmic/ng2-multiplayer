@@ -8,13 +8,13 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabase } from 'angularfire2/database';
 
 
-const config = {
-  apiKey: 'AIzaSyChWgkenBfXfcMQpazgqWj7SGqqwildmeI',
-  authDomain: 'ng2-multiplayer.firebaseapp.com',
-  databaseURL: 'https://ng2-multiplayer.firebaseio.com',
-  projectId: 'ng2-multiplayer',
-  storageBucket: 'ng2-multiplayer.appspot.com',
-  messagingSenderId: '111757897801'
+var config = {
+  apiKey: "AIzaSyD79Rd2fqqNpZ6G2NGlk2A0wnPjA9c6c4c",
+  authDomain: "ng-vikings-a3018.firebaseapp.com",
+  databaseURL: "https://ng-vikings-a3018.firebaseio.com",
+  projectId: "ng-vikings-a3018",
+  storageBucket: "ng-vikings-a3018.appspot.com",
+  messagingSenderId: "415216802192"
 };
 
 @NgModule({

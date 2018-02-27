@@ -39,8 +39,8 @@ export class GameComponent implements OnDestroy {
 
     this.db = db;
     this.game = new Phaser.Game(
-      window.innerWidth, window.innerHeight,         // width x height
-      Phaser.AUTO,      // the game context, 2D/3D
+      window.innerWidth, window.innerHeight,         // full screen
+      Phaser.AUTO,      // Render type
       'gameDiv',    // id of the DOM element to add the game
       {
         preload: function () {
