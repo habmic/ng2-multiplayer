@@ -2,11 +2,13 @@
 
 import {Component, OnDestroy} from '@angular/core';
 import {AngularFireDatabase} from 'angularfire2/database';
+import { UserService } from '../user.service';
+
 import * as uuid from 'uuid';
 import * as _ from 'lodash';
 
-declare let Phaser: any;
-declare let self: any;
+declare let Phaser:any;
+declare let self:any;
 
 @Component({
   selector: 'app-game',
@@ -16,18 +18,19 @@ declare let self: any;
 export class GameComponent implements OnDestroy {
 
 
-  game: any;
+  game:any;
   sprite;
   cursors;
   moveFactor;
   maxVelocity = 500;
   enemies;
   myGuid;
-  db: AngularFireDatabase;
+  db:AngularFireDatabase;
   self;
   enemiesMap = {};
+  username;
 
-  constructor(db: AngularFireDatabase) {
+  constructor(db:AngularFireDatabase, private userService : UserService) {
 
     window.onunload = function () {
       self.enemies.remove(self.myGuid);
@@ -37,7 +40,9 @@ export class GameComponent implements OnDestroy {
       self.enemies.remove(self.myGuid);
     };
 
+    this.username = userService.getUser();
     this.db = db;
+
     this.game = new Phaser.Game(
       window.innerWidth, window.innerHeight,         // full screen
       Phaser.AUTO,      // Render type
